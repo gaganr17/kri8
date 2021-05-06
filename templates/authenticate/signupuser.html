@@ -1,0 +1,42 @@
+{% extends 'authenticate/index.html' %}
+
+{% block signup %}
+<div class="row justify-content-center mt-5">
+      <div class="col-md-5">
+        <h2>Sign Up</h2>
+        </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+              <div class="col-md-5">
+{% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+<form method = "POST">
+   {% csrf_token %}
+   <div class="form-group">
+                     <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Username">
+                    <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
+                </div>
+                              <div class="form-group">
+                                 <label for="password1">Password</label>
+
+                              <input type="password" name="password1" class="form-control" id="password1" placeholder="Password">
+
+                          </div>
+                          <div class="form-group">
+                             <label for="password2">Confirm Password</label>
+
+                              <input type="password" name="password2" class="form-control" id="password2" placeholder="Password Confirmation">
+                          </div>
+    <!-- the CSRF token is obatine dfrom the error page it is used to prevent forgery -->
+
+     <!-- the as_p is just written to provide suitable structure and has has no specific importance -->
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+</div>
+</div>
+
+      {% endblock %}

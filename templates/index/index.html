@@ -1,0 +1,165 @@
+{% extends 'index/slider.html' %}
+<!DOCTYPE html>
+{% block content %}
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Font-awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- For loading header n footer -->
+    <!-- Latest compiled and minified jQuery -->
+    <script src="http://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+    <!-- Index page links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+    <!-- <script>
+      $(function(){
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script> -->
+
+    <!-- <link rel="stylesheet" href="includes/css/header.css">
+    <link rel="stylesheet" href="includes/css/footer.css">
+    <link rel="stylesheet" href="css/index.css"> -->
+    <link rel="stylesheet" href="{% static 'index/css/index.css' %}">
+
+  </head>
+  <body>
+
+    <!-- <div id="header"></div> -->
+    {% include "includes/header.html" %}
+
+    <!--Remaining section-->
+
+    <!-- <section>
+      <div id="containerSlider">
+          <div id="slidingImage"> <img src="{% static 'index/img/img1.png' %}" alt="image1"> </div>
+                <div id="slidingImage"> <img src="{% static 'index/img/img2.png' %}" alt="image2"> </div>
+                <div id="slidingImage"> <img src="{% static 'index/img/img3.png' %}" alt="image3"> </div>
+                <div id="slidingImage"> <img src="{% static 'index/img/img4.png' %}" alt="image4"> </div>
+            </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('#containerSlider').slick( {
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+          });
+        });
+    </script> -->
+
+    <!-- slider JS ENDS -->
+    <!-- <br><br> -->
+
+    <div id="mainContainer">
+
+      <h1>Featured</h1><br>
+      <div id="featured">
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/feat5.jfif' %}" alt="" ></a>
+            <h2>Featured Cloth1</h2>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/feat6.jpeg' %}" alt="" ></a>
+            <h2>Featured Cloth2</h2>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/feat7.jfif' %}" alt="" ></a>
+            <h2>Featured Cloth3</h2>
+        </div>
+      </div>
+
+      <h1> clothing for Men </h1><br>
+      <div id="containerClothing">
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/man1.jfif' %}" alt=""></a>
+            <h2>Men Cloth1</h2>
+            <p class="pro"><b>Bareskin</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/man2.jfif' %}" alt=""></a>
+            <h2>Men Cloth2</h2>
+            <p class="pro"><b>H&M</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/man3.jfif' %}" alt=""></a>
+            <h2>Men Cloth3</h2>
+            <p class="pro"><b>United Colors of Benetton</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/man4.jfif' %}" alt=""></a>
+            <h2>Men Cloth4</h2>
+            <p class="pro"><b>PUMA</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/man5.jfif' %}" alt=""></a>
+            <h2>Men Cloth5</h2>
+            <p class="pro"><b>Nike</b></p>
+        </div>
+      </div>
+
+      <h1> clothing for Women </h1><br>
+      <div id="containerClothing">
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/w1.jfif' %}" alt=""></a>
+            <h2>Women Cloth1</h2>
+            <p class="pro"><b>Bareskin</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/w2.jfif' %}" alt=""></a>
+            <h2>Women Cloth2</h2>
+            <p class="pro"><b>United Colors of Benett</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/w3.jfif' %}" alt=""></a>
+            <h2>Women Cloth3</h2>
+            <p class="pro"><b>H&M</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/w4.jfif' %}" alt=""></a>
+            <h2>Women Cloth4</h2>
+            <p class="pro"><b>H&M</b></p>
+        </div>
+        <div class = "box">
+            <a href="{% url 'product' %}"><img src="{% static 'index/img/w5.jfif' %}" alt=""></a>
+            <h2>Women Cloth5</h2>
+            <p class="pro"><b>United Colors of Benetton</b></p>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+    <!-- <div id="footer"></div> -->
+    {% include "includes/footer.html" %}
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+{% endblock %}

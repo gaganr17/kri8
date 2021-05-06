@@ -1,0 +1,19 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+<div class = "container text-center">
+<h1>The dashboard comes up here as soon as the user logs in. Also, it is seen even without the log in of the user too</h1>
+
+{% if user.is_authenticated %}
+
+
+
+<form action = "{%url 'logoutuser' %}" method = "POST">
+   {% csrf_token %}
+
+  <button type="submit" class = "btn btn-outline-warning">Log Out</button>
+</form>
+{%endif%}
+</div>
+
+{% endblock %}
